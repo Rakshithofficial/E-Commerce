@@ -52,3 +52,22 @@ This setup keeps the UI simple while using Django for core backend functionality
 
 < Ranadheerveldi> - Fronted Review & Testing
 
+## Features
+- User authentication (signup & login)
+- Product listing with filters
+- Cart & checkout flow
+- Order history
+
+## Tech Stack
+- Frontend: HTML, CSS, JavaScript
+- Backend: Django, Django REST Framework
+- Database: SQLite
+
+## Team Contributions
+- Rakshith: Backend integration, core frontend
+- Member 2: UI review, testing, documentation
+- Member 3: Testing, documentation
+#
+#
+#
+#
