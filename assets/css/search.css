@@ -1,0 +1,19 @@
+/* SEARCH BAR ONLY */
+
+.search-wrapper {
+  margin: 20px 0;
+  max-width: 420px;
+}
+
+.search-wrapper input {
+  width: 100%;
+  padding: 12px 14px;
+  border-radius: 12px;
+  border: 1px solid #ddd;
+  font-size: 14px;
+  outline: none;
+}
+
+.search-wrapper input:focus {
+  border-color: #000;
+}

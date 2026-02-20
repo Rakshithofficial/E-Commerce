@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>FLUX • Login</title>
+
+  <!-- Main CSS -->
+  <link rel="stylesheet" href="assets/css/style.css" />
+</head>
+
+<!-- OAuth Loading Modal -->
+<div class="oauth-modal" id="oauthModal">
+  <div class="oauth-box">
+    <div class="oauth-logo" id="oauthLogo">G</div>
+    <p class="oauth-text" id="oauthText">Signing in…</p>
+    <div class="spinner"></div>
+  </div>
+</div>
+
+
+<body class="auth-page">
+
+  <div class="auth-container">
+    <h1 class="logo">FLUX</h1>
+
+    <p class="section-subtitle">Sign in to your account</p>
+
+    <!-- Message -->
+    <p class="error-msg" id="errorMsg"></p>
+
+    <!-- Social Login -->
+    <button type="button" class="google-btn" id="googleLogin">
+      Continue with Google
+    </button>
+
+    <button type="button" class="apple-btn" id="appleLogin">
+      Continue with Apple
+    </button>
+
+    <div class="divider">or</div>
+
+    <!-- Email Login -->
+    <input type="email" id="email" placeholder="Email" />
+    <input type="password" id="password" placeholder="Password" />
+
+    <button type="button" class="primary-btn" id="loginBtn">
+      Sign In
+    </button>
+
+    <p class="auth-switch">
+      Don’t have an account?
+      <a href="pages/signup.html">Create one</a>
+    </p>
+  </div>
+
+  <!-- Auth Logic -->
+  <script src="assets/js/auth.js"></script>
+</body>
+</html>

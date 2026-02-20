@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>FLUX • Sign Up</title>
+
+  <!-- Main CSS -->
+  <link rel="stylesheet" href="../assets/css/style.css" />
+</head>
+<!-- OAuth Loading Modal -->
+<div id="oauthModal" class="oauth-modal" style="display:none">
+  <div class="oauth-box">
+    <div id="oauthLogo" class="oauth-logo">G</div>
+    <p id="oauthText">Signing in…</p>
+  </div>
+</div>
+
+<body class="auth-page">
+
+  <div class="auth-container">
+    <h1 class="logo">FLUX</h1>
+
+    <p class="section-subtitle">Create your account</p>
+
+    <!-- Success message (hidden by default) -->
+    <p class="success-msg" id="successMsg"></p>
+
+    <!-- Social Signup -->
+    <button type="button" class="google-btn" id="googleSignup">
+      Continue with Google
+    </button>
+
+    <button type="button" class="apple-btn" id="appleSignup">
+      Continue with Apple
+    </button>
+
+    <div class="divider">or</div>
+
+    <!-- Sign Up Form -->
+    <input type="text" id="name" placeholder="Full Name" />
+    <input type="email" id="email" placeholder="Email" />
+    <input type="password" id="password" placeholder="Password" />
+    <input type="password" id="confirmPassword" placeholder="Confirm Password" />
+
+    <button type="button" class="primary-btn" id="createAccountBtn">
+      Create Account
+    </button>
+
+    <p class="auth-switch">
+      Already have an account?
+      <a href="../index.html">Log in</a>
+    </p>
+  </div>
+
+  <!-- Signup Logic -->
+  <script src="../assets/js/signup.js"></script>
+  <script>
+document.querySelector("form").addEventListener("submit", async function (e) {
+  e.preventDefault();
+
+  const name = document.querySelector('input[placeholder="Full Name"]').value;
+  const email = document.querySelector('input[placeholder="Email"]').value;
+  const password = document.querySelector('input[placeholder="Password"]').value;
+  const confirm = document.querySelector('input[placeholder="Confirm Password"]').value;
+
+  if (password !== confirm) {
+    alert("Passwords do not match");
+    return;
+  }
+
+  const res = await fetch("http://127.0.0.1:8000/api/auth/signup/", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({
+      username: email,   // using email as username (OK)
+      password: password
+    })
+  });
+
+  const data = await res.json();
+
+  if (!res.ok) {
+    alert(data.error || "Signup failed");
+    return;
+  }
+
+  alert("Signup successful! Please login.");
+  window.location.href = "login.html";
+});
+</script>
+</body>
+</html>
