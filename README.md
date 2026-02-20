@@ -48,4 +48,7 @@ FLUX/
 This setup keeps the UI simple while using Django for core backend functionality.
 
 
+## contributors 
+
+< Ranadheerveldi> - Fronted Review & Testing
 
