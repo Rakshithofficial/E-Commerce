@@ -1,0 +1,171 @@
+
+<!-- Contribution Reviewd frontend structure and ui flow-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>FLUX • Home</title>
+
+  <!-- PREVENT THEME FLICKER -->
+  <script>
+    (function () {
+      const theme = localStorage.getItem("flux_theme");
+      if (theme === "dark") {
+        document.documentElement.classList.add("dark");
+      }
+    })();
+  </script>
+
+  <script src="../assets/js/cart-badge.js"></script>
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="../assets/css/style.css" />
+  <link rel="stylesheet" href="../assets/css/product-card.css" />
+  <link rel="stylesheet" href="../assets/css/search.css" />
+  <link rel="stylesheet" href="../assets/css/sidebar.css" />
+  
+</head>
+
+<body>
+
+  <!-- NAVBAR -->
+  <header class="navbar">
+    <div class="nav-left">
+      <a href="home.html" class="logo">FLUX</a>
+    </div>
+
+    <div class="nav-right">
+
+      <!-- AUTH ACTIONS (GUEST ONLY) -->
+      <div id="authActions" class="auth-actions">
+        <a href="signup.html" class="btn-secondary">Sign up</a>
+        <a href="signup.html" class="btn-primary">Login</a>
+      </div>
+
+      <!-- CART -->
+      <a href="cart.html" class="cart-icon" title="Cart">
+      🛒
+      <span id="cartCount" class="cart-badge"></span>
+      </a>
+
+      <!-- THEME TOGGLE -->
+      <div class="theme-switch">
+        <input type="checkbox" id="themeToggle" />
+        <label for="themeToggle"></label>
+      </div>
+
+      <!-- PROFILE (LOGGED-IN ONLY) -->
+      <div class="profile-wrapper" id="profileWrapper">
+        <div class="nav-profile" id="profileBtn">
+          <img id="navAvatar" src="" alt="Profile" />
+          <span id="navName"></span>
+          <span class="nav-arrow">▾</span>
+        </div>
+
+        <div class="profile-menu" id="profileMenu">
+          <a href="profile.html">My Profile</a>
+          <a href="orders.html">My Orders</a>
+          <a href="settings.html">Settings</a>
+          <button id="logoutBtn" class="logout-btn">Logout</button>
+        </div>
+      </div>
+
+    </div>
+  </header>
+
+  <!-- HERO SECTION -->
+  <section class="hero">
+    <div class="hero-content">
+      <h1>Shop Smarter with <span>FLUX</span></h1>
+      <p>Premium tech, everyday essentials, and deals you’ll love.</p>
+
+      <div class="hero-actions">
+        <a href="#products" class="btn-primary">Shop Now</a>
+        <a href="#" class="btn-secondary" id="browseCategoriesBtn">
+  Browse Categories
+</a>
+      </div>
+    </div>
+
+    <div class="hero-visual">
+      <div class="glow-card"></div>
+    </div>
+  </section>
+
+  <!-- CATEGORIES STRIP -->
+<!-- QUICK FILTERS -->
+<section class="quick-filters">
+  <button class="filter-pill active" data-filter="all">⭐ Best Sellers</button>
+  <button class="filter-pill" data-filter="trending">🔥 Trending</button>
+  <button class="filter-pill" data-filter="new">🆕 New Arrivals</button>
+  <button class="filter-pill" data-filter="under-2999">💸 Under ₹2999</button>
+  <button class="filter-pill" data-filter="deals">🎁 Deals for You</button>
+</section>
+
+  <!-- MAIN CONTENT -->
+  <main class="container">
+    <h2 class="section-title" id="products">Featured Products</h2>
+
+    <div class="shop-layout">
+
+      <!-- SIDEBAR -->
+      <aside class="category-sidebar">
+        <h4>Categories</h4>
+        <ul>
+          <li data-category="all" class="active">All</li>
+          <li data-category="Shoes">Shoes</li>
+          <li data-category="Clothing">Clothing</li>
+          <li data-category="Electronics">Electronics</li>
+          <li data-category="Accessories">Accessories</li>
+        </ul>
+      </aside>
+
+      <!-- PRODUCTS -->
+      <section class="products-section">
+        <div class="search-wrapper">
+          <input
+            type="text"
+            id="searchInput"
+            placeholder="Search products, categories..."
+          />
+        </div>
+
+        <div class="product-grid" id="productGrid"></div>
+      </section>
+
+    </div>
+  </main>
+
+  <!-- SCRIPTS -->
+  <script src="../assets/js/auth.js"></script>
+  <script src="../assets/js/theme.js"></script>
+  <script src="../assets/js/navbar.js"></script>
+  <script src="../assets/js/products.js"></script>
+
+
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const btn = document.getElementById("browseCategoriesBtn");
+    const target = document.getElementById("products");
+
+    if (!btn || !target) return;
+
+    btn.addEventListener("click", (e) => {
+      e.preventDefault();
+
+      const top =
+        target.getBoundingClientRect().top +
+        window.scrollY -
+        80; // navbar offset
+
+      window.scrollTo({
+        top,
+        behavior: "smooth"
+      });
+    });
+  });
+</script>
+
+</body>
+</html>

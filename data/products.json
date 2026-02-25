@@ -1,0 +1,30 @@
+[
+  {
+    "id": 1,
+    "name": "Wireless Headphones",
+    "price": 2999,
+    "image": "https://via.placeholder.com/300x300?text=Headphones",
+    "inStock": true
+  },
+  {
+    "id": 2,
+    "name": "Smart Watch",
+    "price": 4999,
+    "image": "https://via.placeholder.com/300x300?text=Watch",
+    "inStock": false
+  },
+  {
+    "id": 3,
+    "name": "Bluetooth Speaker",
+    "price": 2499,
+    "image": "https://via.placeholder.com/300x300?text=Speaker",
+    "inStock": true
+  },
+  {
+    "id": 4,
+    "name": "Backpack",
+    "price": 1999,
+    "image": "https://via.placeholder.com/300x300?text=Backpack",
+    "inStock": false
+  }
+]
