@@ -1,0 +1,1630 @@
+/* =====================
+   RESET & BASE
+===================== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+
+:root {
+  --bg: #ffffff;
+  --text: #111111;
+  --primary: #007aff;
+  --gray: #f2f2f7;
+  --border: #e5e5ea;
+}
+
+body {
+  background: var(--bg);
+  color: var(--text);
+}
+
+/* =====================
+   AUTH PAGE
+===================== */
+.auth-page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background: var(--gray);
+}
+
+.auth-container {
+  background: #ffffff;
+  padding: 32px;
+  width: 100%;
+  max-width: 360px;
+  border-radius: 20px;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.08);
+  text-align: center;
+}
+
+.logo {
+  font-size: 32px;
+  font-weight: 700;
+  margin-bottom: 16px;
+  letter-spacing: 1px;
+}
+
+.section-subtitle {
+  font-size: 14px;
+  color: #666;
+  margin-bottom: 16px;
+}
+
+/* Messages */
+.success-msg,
+.error-msg {
+  display: none;
+  font-size: 14px;
+  margin-bottom: 12px;
+  text-align: center;
+}
+
+.success-msg {
+  color: #28a745;
+}
+
+.error-msg {
+  color: #dc3545;
+}
+
+/* =====================
+   INPUTS
+===================== */
+input {
+  width: 100%;
+  padding: 12px;
+  margin-top: 12px;
+  border-radius: 12px;
+  border: 1px solid var(--border);
+  font-size: 14px;
+  background: #fff;
+}
+
+input:focus {
+  outline: none;
+  border-color: var(--primary);
+}
+
+/* =====================
+   BUTTONS
+===================== */
+button {
+  width: 100%;
+  padding: 12px;
+  border-radius: 12px;
+  border: none;
+  font-size: 15px;
+  cursor: pointer;
+  transition: transform 0.15s ease, opacity 0.15s ease;
+}
+
+button:hover {
+  transform: translateY(-1px);
+  opacity: 0.95;
+}
+
+/* Google */
+.google-btn {
+  background: #ffffff;
+  color: #111;
+  border: 1px solid var(--border);
+  margin-bottom: 12px;
+}
+
+/* Apple */
+.apple-btn {
+  background: #000000;
+  color: #ffffff;
+  margin-bottom: 16px;
+}
+
+/* Primary */
+.primary-btn {
+  background: var(--primary);
+  color: #ffffff;
+  margin-top: 14px;
+}
+
+/* =====================
+   DIVIDER
+===================== */
+.divider {
+  margin: 16px 0;
+  font-size: 13px;
+  color: #888;
+  position: relative;
+}
+
+.divider::before,
+.divider::after {
+  content: "";
+  height: 1px;
+  width: 40%;
+  background: var(--border);
+  position: absolute;
+  top: 50%;
+}
+
+.divider::before {
+  left: 0;
+}
+
+.divider::after {
+  right: 0;
+}
+
+/* =====================
+   AUTH SWITCH
+===================== */
+.auth-switch {
+  margin-top: 16px;
+  font-size: 14px;
+}
+
+.auth-switch a {
+  color: var(--primary);
+  text-decoration: none;
+  font-weight: 500;
+}
+
+/* =====================
+   NAVBAR
+===================== */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 24px;
+  border-bottom: 1px solid var(--border);
+  background: #ffffff;
+}
+
+.nav-right span {
+  margin-left: 16px;
+  font-size: 18px;
+  cursor: pointer;
+}
+
+.container {
+  padding: 24px;
+}
+
+/* =====================
+   PROFILE MENU
+===================== */
+.profile-wrapper {
+  position: relative;
+  display: inline-block;
+}
+
+.profile-menu {
+  position: absolute;
+  top: 42px;
+  right: 0;
+  background: #ffffff;
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  width: 160px;
+  display: none;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+  overflow: hidden;
+}
+
+.profile-menu a,
+.profile-menu button {
+  display: block;
+  width: 100%;
+  padding: 10px 14px;
+  background: none;
+  border: none;
+  text-align: left;
+  font-size: 14px;
+  cursor: pointer;
+  color: var(--text);
+}
+
+.profile-menu a:hover,
+.profile-menu button:hover {
+  background: var(--gray);
+}
+
+.logout-btn {
+  color: red;
+}
+
+/* =====================
+   PRODUCTS
+===================== */
+.section-title {
+  font-size: 20px;
+  margin-bottom: 16px;
+}
+
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+  gap: 20px;
+}
+
+.product-card {
+  background: #ffffff;
+  border-radius: 16px;
+  padding: 12px;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.08);
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.product-card:hover {
+  transform: translateY(-4px);
+}
+
+.product-card img {
+  width: 100%;
+  border-radius: 12px;
+  margin-bottom: 10px;
+}
+
+.product-name {
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.product-price {
+  font-size: 14px;
+  font-weight: 600;
+  margin-top: 4px;
+}
+
+/* =====================
+   DARK MODE
+===================== */
+html.dark {
+  --bg: #000000;
+  --text: #ffffff;
+  --gray: #1c1c1e;
+  --border: #333333;
+}
+
+html.dark .auth-container,
+html.dark .navbar,
+html.dark .product-card,
+html.dark .profile-menu {
+  background: #1c1c1e;
+}
+/* =====================
+   OAUTH LOADING MODAL
+===================== */
+.oauth-modal {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.35);
+  backdrop-filter: blur(6px);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  z-index: 999;
+}
+
+.oauth-box {
+  background: #ffffff;
+  width: 260px;
+  padding: 24px;
+  border-radius: 18px;
+  text-align: center;
+  box-shadow: 0 20px 50px rgba(0,0,0,0.2);
+}
+
+.oauth-logo {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  margin: 0 auto 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 20px;
+  color: #fff;
+  background: #4285f4; /* Google blue by default */
+}
+
+.oauth-text {
+  font-size: 14px;
+  margin-bottom: 16px;
+}
+
+/* Spinner */
+.spinner {
+  width: 22px;
+  height: 22px;
+  border: 3px solid #ddd;
+  border-top: 3px solid #007aff;
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+  margin: 0 auto;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Apple variation */
+.oauth-apple .oauth-logo {
+  background: #000;
+}
+
+/* =====================
+   SETTINGS PAGE (iOS STYLE)
+===================== */
+.settings-page {
+  max-width: 520px;
+}
+
+.settings-group {
+  background: #ffffff;
+  border-radius: 16px;
+  margin-bottom: 20px;
+  overflow: hidden;
+}
+
+.settings-title {
+  font-size: 13px;
+  color: #666;
+  padding: 12px 16px;
+}
+
+.settings-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 14px 16px;
+  border-top: 1px solid var(--border);
+  font-size: 15px;
+  text-decoration: none;
+  color: var(--text);
+}
+
+.settings-item:first-of-type {
+  border-top: none;
+}
+
+.settings-item:hover {
+  background: var(--gray);
+}
+
+.settings-value {
+  color: #888;
+  font-size: 14px;
+}
+
+.arrow {
+  font-size: 18px;
+  color: #aaa;
+}
+
+/* Dark mode */
+html.dark .settings-group {
+  background: #1c1c1e;
+}
+
+html.dark .settings-title {
+  color: #aaa;
+}
+/* =====================
+   iOS APPEARANCE TOGGLE
+===================== */
+.appearance-toggle {
+  align-items: center;
+}
+
+.appearance-text {
+  display: flex;
+  flex-direction: column;
+}
+
+.appearance-title {
+  font-size: 15px;
+  font-weight: 500;
+}
+
+.appearance-sub {
+  font-size: 13px;
+  color: #888;
+  margin-top: 2px;
+}
+
+/* Dark mode text */
+html.dark .appearance-sub {
+  color: #aaa;
+}
+
+/* =====================
+   NAVBAR POLISH
+===================== */
+.navbar {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  backdrop-filter: blur(10px);
+}
+
+.nav-left .logo {
+  font-size: 22px;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+.nav-right {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.cart-icon,
+.profile-icon {
+  font-size: 20px;
+  cursor: pointer;
+  padding: 6px;
+  border-radius: 50%;
+  transition: background 0.2s ease;
+}
+
+.cart-icon:hover,
+.profile-icon:hover {
+  background: var(--gray);
+}
+
+/* Profile dropdown animation */
+.profile-menu {
+  animation: fadeSlide 0.15s ease;
+}
+
+@keyframes fadeSlide {
+  from {
+    opacity: 0;
+    transform: translateY(-6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* =====================
+   PROFILE PAGE
+===================== */
+.profile-avatar {
+  width: 72px;
+  height: 72px;
+  border-radius: 50%;
+  background: var(--gray);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 28px;
+  margin-bottom: 16px;
+}
+
+.save-msg {
+  display: none;
+  color: #28a745;
+  font-size: 14px;
+  margin-top: 12px;
+}
+
+/* =====================
+   iOS PROFILE DESIGN
+===================== */
+
+.ios-bg {
+  background: #f2f2f7;
+}
+
+html.dark .ios-bg {
+  background: #000;
+}
+
+/* Page */
+.ios-page {
+  max-width: 420px;
+  margin: 0 auto;
+  padding: 24px 16px 40px;
+}
+
+/* Header */
+.ios-profile-header {
+  text-align: center;
+  margin-bottom: 24px;
+}
+
+.ios-avatar {
+  width: 96px;
+  height: 96px;
+  border-radius: 50%;
+  background: #007aff;
+  color: white;
+  font-size: 36px;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 12px;
+}
+
+.ios-profile-header h2 {
+  font-size: 22px;
+  font-weight: 600;
+}
+
+.ios-profile-header p {
+  font-size: 14px;
+  color: #8e8e93;
+}
+
+/* Group */
+.ios-group {
+  background: white;
+  border-radius: 16px;
+  overflow: hidden;
+  margin-bottom: 24px;
+}
+
+html.dark .ios-group {
+  background: #1c1c1e;
+}
+
+/* Rows */
+.ios-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 14px 16px;
+  font-size: 16px;
+  border-bottom: 1px solid #e5e5ea;
+}
+
+html.dark .ios-row {
+  border-color: #2c2c2e;
+}
+
+.ios-row:last-child {
+  border-bottom: none;
+}
+
+.ios-row input {
+  border: none;
+  background: transparent;
+  text-align: right;
+  font-size: 16px;
+  color: var(--text);
+  outline: none;
+  width: 55%;
+}
+
+/* Muted */
+.ios-muted {
+  color: #8e8e93;
+}
+
+/* Save Button */
+.ios-primary-btn {
+  width: 100%;
+  padding: 14px;
+  border-radius: 14px;
+  background: #007aff;
+  color: white;
+  font-size: 16px;
+  font-weight: 500;
+  border: none;
+}
+
+/* Toast */
+.ios-toast {
+  position: fixed;
+  bottom: 24px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(0,0,0,0.8);
+  color: white;
+  padding: 10px 16px;
+  border-radius: 20px;
+  font-size: 14px;
+  display: none;
+}
+
+/* =====================
+   PROFILE (iOS STYLE)
+===================== */
+
+.profile-page {
+  max-width: 420px;
+  margin: 0 auto;
+}
+
+.profile-header {
+  text-align: center;
+  margin: 40px 0;
+}
+
+.avatar-wrapper {
+  width: 96px;
+  height: 96px;
+  border-radius: 50%;
+  overflow: hidden;
+  display: inline-block;
+  background: var(--gray);
+  cursor: pointer;
+  margin-bottom: 12px;
+}
+
+.avatar-wrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.profile-header h2 {
+  font-size: 20px;
+  margin-top: 8px;
+}
+
+.profile-header p {
+  font-size: 14px;
+  color: #777;
+}
+
+.ios-card {
+  background: var(--bg);
+  border-radius: 18px;
+  padding: 8px 0;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+  margin-bottom: 24px;
+}
+
+.ios-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 14px 18px;
+  font-size: 15px;
+}
+
+.ios-row + .ios-row {
+  border-top: 1px solid var(--border);
+}
+
+.ios-row input {
+  border: none;
+  text-align: right;
+  background: transparent;
+  font-size: 15px;
+  width: 60%;
+}
+
+.success-msg {
+  text-align: center;
+  color: #28a745;
+  margin-top: 12px;
+  display: none;
+}
+
+/* =====================
+   DARK THEME (GLOBAL OVERRIDE – iOS STYLE)
+   ===================== */
+html.dark {
+  --bg: #1c1c1e;
+  --text: #ffffff;
+  --gray: #2c2c2e;
+  --border: #3a3a3c;
+}
+
+/* =====================
+   NAV PROFILE (AVATAR + NAME)
+===================== */
+.nav-profile {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+}
+
+.nav-profile img {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  object-fit: cover;
+  background: var(--gray);
+}
+
+.nav-profile span {
+  font-size: 14px;
+  font-weight: 500;
+}
+
+/* =====================
+   NAV PROFILE ARROW
+===================== */
+.nav-profile {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  cursor: pointer;
+}
+
+.nav-arrow {
+  font-size: 12px;
+  opacity: 0.7;
+  transition: transform 0.2s ease;
+}
+
+/* Rotate arrow when menu open */
+.profile-wrapper.open .nav-arrow {
+  transform: rotate(180deg);
+}
+
+/* =====================
+   NAV NAME CLICK AREA
+===================== */
+.nav-name-area {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  cursor: pointer;
+}
+
+#navAvatar {
+  cursor: default;
+}
+
+.logo {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* =====================
+   HERO (VIBRANT & BOLD)
+===================== */
+.hero {
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr;
+  gap: 24px;
+  align-items: center;
+  padding: 40px 0 24px;
+}
+
+.hero-content h1 {
+  font-size: clamp(28px, 4vw, 44px);
+  line-height: 1.1;
+  margin-bottom: 12px;
+}
+
+.hero-content h1 span {
+  color: var(--primary);
+}
+
+.hero-content p {
+  font-size: 16px;
+  color: #666;
+  max-width: 520px;
+}
+
+html.dark .hero-content p {
+  color: #aaa;
+}
+
+.hero-actions {
+  display: flex;
+  gap: 12px;
+  margin-top: 18px;
+}
+
+.btn-primary,
+.btn-secondary {
+  padding: 12px 18px;
+  border-radius: 14px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: transform .15s ease, box-shadow .15s ease, background .15s ease;
+}
+
+.btn-primary {
+  background: var(--primary);
+  color: #fff;
+  box-shadow: 0 10px 24px rgba(0,122,255,.25);
+}
+
+.btn-primary:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 14px 30px rgba(0,122,255,.35);
+}
+
+.btn-secondary {
+  border: 1px solid var(--border);
+  color: var(--text);
+  background: transparent;
+}
+
+.btn-secondary:hover {
+  background: var(--gray);
+}
+
+/* Visual */
+.hero-visual {
+  position: relative;
+  height: 220px;
+}
+
+.glow-card {
+  position: absolute;
+  inset: 0;
+  border-radius: 24px;
+  background:
+    radial-gradient(120px 120px at 20% 20%, rgba(0,122,255,.35), transparent 60%),
+    radial-gradient(160px 160px at 80% 40%, rgba(255,45,85,.25), transparent 60%),
+    linear-gradient(180deg, rgba(255,255,255,.7), rgba(255,255,255,.4));
+  backdrop-filter: blur(6px);
+  animation: floaty 6s ease-in-out infinite;
+}
+
+html.dark .glow-card {
+  background:
+    radial-gradient(120px 120px at 20% 20%, rgba(0,122,255,.45), transparent 60%),
+    radial-gradient(160px 160px at 80% 40%, rgba(255,45,85,.35), transparent 60%),
+    linear-gradient(180deg, rgba(28,28,30,.9), rgba(28,28,30,.7));
+}
+
+/* Categories */
+.categories {
+  display: flex;
+  gap: 10px;
+  padding: 16px 0 8px;
+  overflow-x: auto;
+}
+
+.categories::-webkit-scrollbar { display: none; }
+
+.cat {
+  padding: 10px 14px;
+  border-radius: 14px;
+  border: 1px solid var(--border);
+  background: var(--bg);
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform .15s ease, background .15s ease, box-shadow .15s ease;
+}
+
+.cat:hover {
+  transform: translateY(-1px);
+  background: var(--gray);
+  box-shadow: 0 6px 16px rgba(0,0,0,.08);
+}
+
+/* Motion */
+@keyframes floaty {
+  0%,100% { transform: translateY(0); }
+  50% { transform: translateY(-6px); }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .hero {
+    grid-template-columns: 1fr;
+  }
+  .hero-visual {
+    height: 160px;
+  }
+}
+
+/* =====================
+   HERO ANIMATIONS
+===================== */
+
+/* Initial state */
+.hero-content {
+  animation: heroFadeUp 0.9s ease-out forwards;
+}
+
+.hero-content h1 {
+  animation: heroFadeUp 0.9s ease-out forwards;
+}
+
+.hero-content p {
+  animation: heroFadeUp 1.1s ease-out forwards;
+}
+
+.hero-actions {
+  animation: heroFadeUp 1.3s ease-out forwards;
+}
+
+@keyframes heroFadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* =====================
+   HERO GLOW EFFECT
+===================== */
+
+.glow-card {
+  width: 320px;
+  height: 220px;
+  border-radius: 24px;
+  background: linear-gradient(
+    135deg,
+    #007aff,
+    #5e5ce6,
+    #00c6ff
+  );
+  filter: blur(40px);
+  opacity: 0.45;
+  animation: glowPulse 4s ease-in-out infinite;
+}
+
+@keyframes glowPulse {
+  0% {
+    transform: scale(1);
+    opacity: 0.45;
+  }
+  50% {
+    transform: scale(1.08);
+    opacity: 0.65;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 0.45;
+  }
+}
+
+/* =====================
+   HERO BUTTON INTERACTIONS
+===================== */
+
+.hero-actions a {
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.hero-actions a:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 25px rgba(0, 122, 255, 0.25);
+}
+
+.hero-actions a:active {
+  transform: translateY(0);
+  box-shadow: none;
+}
+
+/* =====================
+   SCROLL REVEAL (PREP)
+===================== */
+
+.reveal {
+  opacity: 0;
+  transform: translateY(16px);
+  transition: all 0.6s ease;
+}
+
+.reveal.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* =====================
+   HERO LAYOUT POLISH
+===================== */
+
+.hero {
+  padding: 80px 24px;
+}
+
+.hero-content {
+  max-width: 640px;
+}
+.hero {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 40px;
+}
+
+.hero-visual {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+@media (min-width: 1200px) {
+  .hero {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+}
+
+.categories {
+  margin-bottom: 48px;
+}
+
+.section-title {
+  margin-top: 32px;
+}
+
+.hero-content {
+  padding-left: 8px;
+}
+
+/* =====================
+   CATEGORY PILLS – DARK MODE FIX
+===================== */
+
+html.dark .categories .cat {
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  color: #e5e5ea;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.35);
+  transition: all 0.25s ease;
+}
+
+html.dark .categories .cat:hover {
+  background: rgba(0, 122, 255, 0.12);
+  border-color: rgba(0, 122, 255, 0.5);
+  color: #ffffff;
+  transform: translateY(-2px);
+}
+
+html.dark .categories .cat.active {
+  background: #007aff;
+  border-color: #007aff;
+  color: white;
+  box-shadow: 0 6px 18px rgba(0, 122, 255, 0.45);
+}
+
+/* =====================
+   CATEGORY PILL ANIMATION
+===================== */
+
+.categories .cat {
+  opacity: 0;
+  transform: translateY(12px);
+  animation: catFadeUp 0.6s ease forwards;
+}
+
+.categories .cat:nth-child(1) { animation-delay: 0.05s; }
+.categories .cat:nth-child(2) { animation-delay: 0.12s; }
+.categories .cat:nth-child(3) { animation-delay: 0.19s; }
+.categories .cat:nth-child(4) { animation-delay: 0.26s; }
+.categories .cat:nth-child(5) { animation-delay: 0.33s; }
+
+@keyframes catFadeUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.categories .cat {
+  transition: all 0.25s ease;
+}
+
+.categories .cat:hover {
+  transform: translateY(-2px);
+}
+
+/* =====================
+   CATEGORY PILLS — iOS STYLE
+===================== */
+
+.categories {
+  display: flex;
+  gap: 14px;
+  margin: 28px 0 36px;
+}
+
+.cat {
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  color: #e5e5e7;
+
+  padding: 12px 20px;
+  border-radius: 14px;
+
+  font-size: 14px;
+  font-weight: 500;
+
+  display: flex;
+  align-items: center;
+  gap: 8px;
+
+  cursor: pointer;
+
+  transition:
+    transform 0.18s ease,
+    background 0.18s ease,
+    box-shadow 0.18s ease,
+    border-color 0.18s ease;
+}
+
+/* Hover = subtle pop (iOS-like) */
+.cat:hover {
+  transform: translateY(-2px);
+  background: rgba(255, 255, 255, 0.08);
+  border-color: rgba(255, 255, 255, 0.14);
+  box-shadow: 0 8px 22px rgba(0, 0, 0, 0.35);
+}
+
+/* Active / selected (VERY soft blue) */
+.cat.active {
+  background: rgba(0, 122, 255, 0.14);
+  border-color: rgba(0, 122, 255, 0.35);
+  color: #ffffff;
+}
+.cat {
+  background: rgba(0, 0, 0, 0.04);
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  color: #111;
+  padding: 12px 18px;
+  border-radius: 999px;
+  font-size: 14px;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+  transition: 
+    transform 0.2s ease,
+    box-shadow 0.2s ease,
+    background 0.2s ease;
+}
+.cat:hover {
+  background: rgba(0, 122, 255, 0.08);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+  transform: translateY(-2px);
+}
+.cat.active {
+  background: rgba(0, 122, 255, 0.12);
+  border-color: rgba(0, 122, 255, 0.4);
+  color: #007aff;
+}
+
+html.dark .cat {
+  background: rgba(255, 255, 255, 0.04);
+  border-color: rgba(255, 255, 255, 0.12);
+  color: #fff;
+}
+
+html.dark .cat:hover {
+  background: rgba(0, 122, 255, 0.18);
+}
+
+html.dark .cat.active {
+  background: #007aff;
+  border-color: #007aff;
+  color: white;
+  box-shadow: 0 6px 18px rgba(0, 122, 255, 0.45);
+}
+
+/* =====================
+   PRODUCT CARD HOVER (POLISHED)
+===================== */
+
+/* Smooth base transition */
+.product-card {
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease;
+  will-change: transform;
+}
+
+/* Hover lift */
+.product-card:hover {
+  transform: translateY(-6px);
+}
+
+/* Light mode shadow */
+:root .product-card {
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.08);
+}
+
+:root .product-card:hover {
+  box-shadow: 0 18px 35px rgba(0, 0, 0, 0.12);
+}
+
+/* Dark mode shadow */
+html.dark .product-card {
+  box-shadow: 0 10px 22px rgba(0, 0, 0, 0.45);
+}
+
+html.dark .product-card:hover {
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6);
+}
+
+/* Image zoom effect */
+.product-card img {
+  transition: transform 0.35s ease;
+}
+
+.product-card:hover img {
+  transform: scale(1.06);
+}
+
+/* =====================
+   CATEGORY PILLS — POLISHED INTERACTION
+===================== */
+
+.cat {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+
+  padding: 12px 18px;
+  border-radius: 999px;
+
+  font-size: 14px;
+  font-weight: 500;
+
+  cursor: pointer;
+  user-select: none;
+
+  transition:
+    transform 0.22s ease,
+    background 0.22s ease,
+    border-color 0.22s ease,
+    box-shadow 0.22s ease;
+}
+
+/* ---------- LIGHT MODE ---------- */
+:root .cat {
+  background: #f5f5f7;
+  border: 1px solid #e5e5ea;
+  color: #111;
+}
+
+:root .cat:hover {
+  transform: translateY(-3px);
+  background: #ffffff;
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.08);
+}
+
+/* ---------- DARK MODE ---------- */
+html.dark .cat {
+  background: #1c1c1e;
+  border: 1px solid #2c2c2e;
+  color: #e5e5e7;
+}
+
+html.dark .cat:hover {
+  transform: translateY(-3px);
+  background: #242426;
+  box-shadow: 0 10px 22px rgba(0, 0, 0, 0.6);
+}
+
+/* ---------- ACTIVE / SELECTED ---------- */
+.cat.active {
+  border-color: var(--primary);
+}
+
+:root .cat.active {
+  background: rgba(0, 122, 255, 0.08);
+}
+
+html.dark .cat.active {
+  background: rgba(10, 132, 255, 0.18);
+}
+
+/* =====================
+   NAVBAR LOGO EMPHASIS
+===================== */
+
+.nav-left .logo {
+  font-size: 24px;
+  font-weight: 700;
+  letter-spacing: 0.8px;
+}
+
+/* =====================
+   PRODUCT CARD POLISH
+===================== */
+
+.product-card {
+  position: relative;
+  overflow: hidden;
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease;
+  will-change: transform;
+}
+
+/* Hover lift */
+.product-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.18);
+}
+
+/* Image zoom */
+.product-card img {
+  transition: transform 0.35s ease;
+}
+
+.product-card:hover img {
+  transform: scale(1.06);
+}
+
+/* Soft glow overlay */
+.product-card::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(
+    600px circle at top,
+    rgba(0, 122, 255, 0.08),
+    transparent 40%
+  );
+  opacity: 0;
+  transition: opacity 0.25s ease;
+  pointer-events: none;
+}
+
+.product-card:hover::after {
+  opacity: 1;
+}
+
+/* Dark mode refinement */
+html.dark .product-card:hover {
+  box-shadow: 0 22px 45px rgba(0, 0, 0, 0.45);
+}
+
+html.dark .product-card::after {
+  background: radial-gradient(
+    600px circle at top,
+    rgba(10, 132, 255, 0.15),
+    transparent 45%
+  );
+}
+/* PRODUCT CARD STRUCTURE */
+.product-card {
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.product-card:hover {
+  transform: translateY(-6px);
+}
+
+/* INFO */
+.product-info {
+  padding: 14px;
+}
+
+/* ADD TO CART BUTTON */
+.add-to-cart-btn {
+  margin-top: 10px;
+  width: 100%;
+  padding: 10px;
+  border-radius: 12px;
+  font-weight: 500;
+  cursor: pointer;
+
+  opacity: 0;
+  transform: translateY(6px);
+
+  transition:
+    opacity 0.25s ease,
+    transform 0.25s ease,
+    background 0.2s ease;
+}
+
+/* Reveal only on hover */
+.product-card:hover .add-to-cart-btn {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Dark mode */
+html.dark .add-to-cart-btn {
+  background: #1e90ff;
+  color: white;
+  border: none;
+}
+
+/* Light mode */
+.add-to-cart-btn {
+  background: #007aff;
+  color: white;
+  border: none;
+}
+
+/* OUT OF STOCK */
+.out-of-stock {
+  margin-top: 10px;
+  font-size: 14px;
+  color: #aaa;
+}
+
+/* Disable hover reveal for out-of-stock */
+.product-card:has(.out-of-stock) .add-to-cart-btn {
+  display: none;
+}
+
+/* iOS-style theme toggle */
+.theme-switch {
+  position: relative;
+  width: 44px;
+  height: 24px;
+  margin-right: 16px;
+}
+
+.theme-switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.theme-switch label {
+  position: absolute;
+  inset: 0;
+  background: #d1d1d6;
+  border-radius: 999px;
+  cursor: pointer;
+  transition: background 0.25s ease;
+}
+
+.theme-switch label::before {
+  content: "";
+  position: absolute;
+  height: 18px;
+  width: 18px;
+  left: 3px;
+  top: 3px;
+  background: #fff;
+  border-radius: 50%;
+  transition: transform 0.25s ease;
+}
+
+/* Checked = Dark mode */
+.theme-switch input:checked + label {
+  background: #111;
+}
+
+.theme-switch input:checked + label::before {
+  transform: translateX(20px);
+}
+
+/* ===== DARK MODE: DISABLED ADD TO CART FIX ===== */
+html.dark .add-to-cart-btn:disabled {
+  background-color: #2a2f3a !important; /* muted dark gray */
+  color: #8b9099 !important;            /* faded text */
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+/* extra safety if button gets class instead */
+html.dark .add-to-cart-btn.disabled {
+  background-color: #2a2f3a !important;
+  color: #8b9099 !important;
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+
+
+/* ORDERS PAGE (TEMP) */
+.orders-container {
+  display: grid;
+  gap: 16px;
+}
+
+.order-card {
+  padding: 16px;
+  border-radius: 12px;
+  background: var(--gray);
+  border: 1px solid var(--border);
+}
+.profile-menu {
+  display: none;
+}
+
+.profile-menu.open {
+  display: block;
+}
+
+/* QUICK FILTER PILLS */
+.quick-filters {
+  display: flex;
+  gap: 14px;
+  padding: 20px 0;
+  overflow-x: auto;
+}
+
+.filter-pill {
+  padding: 10px 18px;
+  border-radius: 999px;
+  border: 1px solid #e5e5ea;
+  background: #f6f6f8;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  white-space: nowrap;
+}
+
+.filter-pill:hover {
+  transform: translateY(-1px);
+  background: #ececf1;
+}
+
+.filter-pill.active {
+  background: #007aff;
+  color: #fff;
+  border-color: #007aff;
+  box-shadow: 0 6px 16px rgba(0,122,255,0.25);
+}
+
+/* QUICK NAV PILLS — RESET ACTIVE STATE */
+.filter-pill {
+  background: #f6f6f8;
+  color: #111;
+  border: 1px solid #e5e5ea;
+  transition: transform 0.18s ease, box-shadow 0.18s ease, background 0.18s ease;
+}
+
+/* remove sticky active/focus */
+.filter-pill.active,
+.filter-pill:focus,
+.filter-pill:focus-visible {
+  background: #f6f6f8 !important;
+  color: #111 !important;
+  box-shadow: none !important;
+}
+
+/* tap feedback only */
+.filter-pill:active {
+  transform: scale(0.96);
+  background: #ececf1;
+}
+
+.filter-pill.selected {
+  background: #f6f6f8 !important;
+}
+/* 🔥 FORCE RESET QUICK FILTER PILL STATES */
+.quick-filter,
+.filter-pill {
+  border: 1px solid #e5e5ea !important;
+  background: #f6f6f8 !important;
+  color: #111 !important;
+  box-shadow: none !important;
+  outline: none !important;
+}
+
+/* kill all focus/active/selected states */
+.quick-filter.active,
+.quick-filter:focus,
+.quick-filter:focus-visible,
+.quick-filter:active,
+.filter-pill.active,
+.filter-pill:focus,
+.filter-pill:focus-visible,
+.filter-pill:active {
+  border: 1px solid #e5e5ea !important;
+  background: #f6f6f8 !important;
+  color: #111 !important;
+  box-shadow: none !important;
+  outline: none !important;
+}
+
+/* iOS-style tap feedback only */
+.quick-filter:active,
+.filter-pill:active {
+  transform: scale(0.96);
+}

@@ -1,0 +1,51 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>FLUX • Cart</title>
+
+  <!-- Main Global CSS -->
+  <link rel="stylesheet" href="{% static 'css/style.css' %}">
+
+  <!-- Cart-specific iOS style -->
+  <link rel="stylesheet" href="{% static 'css/cart.css' %}">
+</head>
+
+<body>
+
+  <!-- NAVBAR -->
+  <header class="navbar">
+    <div class="nav-left">
+      <a href="{% url 'home' %}" class="logo">FLUX</a>
+    </div>
+  </header>
+
+  <!-- CART PAGE -->
+  <main class="container cart-page">
+
+    <!-- Title -->
+    <h2 class="section-title">Your Cart</h2>
+
+    <!-- Empty state (JS can toggle this later) -->
+    <div id="emptyCart" class="empty-cart" style="display:none;">
+      <p>Your cart is empty 🛒</p>
+      <a href="{% url 'home' %}" class="btn-primary">Continue Shopping</a>
+    </div>
+
+    <!-- Cart items -->
+    <div id="cartItems" class="cart-items"></div>
+
+    <!-- Summary / Checkout -->
+    <div id="cartSummary" class="cart-summary">
+      <!-- JS injects content -->
+    </div>
+
+  </main>
+
+  <!-- CART LOGIC -->
+  <script src="{% static 'js/cart.js' %}"></script>
+
+</body>
+</html>

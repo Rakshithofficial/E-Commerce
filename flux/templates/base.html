@@ -1,0 +1,72 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>{% block title %}FLUX{% endblock %}</title>
+
+  <!-- PREVENT THEME FLICKER -->
+  <script>
+    (function () {
+      const theme = localStorage.getItem("flux_theme");
+      if (theme === "dark") {
+        document.documentElement.classList.add("dark");
+      }
+    })();
+  </script>
+
+  <!-- CORE STYLES -->
+  <link rel="stylesheet" href="{% static 'css/style.css' %}">
+  <link rel="stylesheet" href="{% static 'css/product-card.css' %}">
+  <link rel="stylesheet" href="{% static 'css/search.css' %}">
+  <link rel="stylesheet" href="{% static 'css/sidebar.css' %}">
+  <link rel="stylesheet" href="{% static 'css/quick-view.css' %}">
+
+  {% block extra_head %}{% endblock %}
+</head>
+
+<body data-auth="{% if user.is_authenticated %}true{% else %}false{% endif %}">
+
+  {% block content %}{% endblock %}
+
+  <!-- 🔥 QUICK VIEW OVERLAY -->
+  <div id="quickViewOverlay" class="quick-view-overlay"></div>
+
+  <!-- 🔥 QUICK VIEW MODAL -->
+  <div id="quickViewPanel" class="quick-view-panel">
+    <button id="quickViewClose" class="quick-view-close">✕</button>
+
+    <div class="quick-view-content">
+      <img id="qvImage" src="" alt="Product image">
+
+      <div class="quick-view-details">
+        <h2 id="qvName"></h2>
+        <p id="qvPrice" class="price"></p>
+        <p id="qvStock" class="stock"></p>
+
+        <!-- AJIO-STYLE ACTION ROW -->
+        <div class="quick-view-actions">
+          <button id="qvAddToCart" class="btn-primary">
+            👜 Add to Bag
+          </button>
+          <button class="btn-secondary">
+            ❤ Wishlist
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- GLOBAL SCRIPTS -->
+  {% if request.path != '/signup/' and request.path != '/login/' %}
+    <script src="{% static 'js/cart-badge.js' %}"></script>
+    <script src="{% static 'js/theme.js' %}"></script>
+    <script src="{% static 'js/navbar.js' %}"></script>
+    <script src="{% static 'js/products.js' %}"></script>
+  {% endif %}
+
+  {% block extra_js %}{% endblock %}
+</body>
+</html>

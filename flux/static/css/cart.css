@@ -1,0 +1,633 @@
+/* =========================
+   CART – iOS STYLE
+========================= */
+
+.cart-page {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+/* Cart item card */
+.cart-item {
+  display: flex;
+  gap: 16px;
+  padding: 16px;
+  margin-bottom: 16px;
+  background: #ffffff;
+  border-radius: 18px;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.06);
+  align-items: center;
+}
+
+/* Dark mode */
+html.dark .cart-item {
+  background: #1c1c1e;
+  box-shadow: none;
+  border: 1px solid #2a2a2c;
+}
+
+.cart-item img {
+  width: 90px;
+  height: 90px;
+  object-fit: cover;
+  border-radius: 14px;
+}
+
+/* Info */
+.cart-info {
+  flex: 1;
+}
+
+.cart-info h4 {
+  margin: 0;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.cart-info p {
+  margin: 6px 0;
+  font-size: 14px;
+  opacity: 0.7;
+}
+
+/* Quantity controls */
+.cart-actions {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.qty-btn {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  border: none;
+  background: #f2f2f7;
+  font-size: 18px;
+  cursor: pointer;
+}
+
+html.dark .qty-btn {
+  background: #2c2c2e;
+  color: #fff;
+}
+
+.qty {
+  min-width: 20px;
+  text-align: center;
+  font-weight: 600;
+}
+
+/* Remove */
+.remove-btn {
+  background: none;
+  border: none;
+  color: #ff3b30;
+  font-size: 13px;
+  cursor: pointer;
+  padding: 0;
+  margin-top: 6px;
+}
+
+/* Summary */
+.cart-summary {
+  margin-top: 30px;
+  padding: 20px;
+  border-radius: 18px;
+  background: #ffffff;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.08);
+}
+
+html.dark .cart-summary {
+  background: #1c1c1e;
+  border: 1px solid #2a2a2c;
+}
+
+.cart-summary h3 {
+  margin-bottom: 14px;
+}
+
+.cart-summary .btn-primary {
+  width: 100%;
+  padding: 14px;
+  font-size: 16px;
+  border-radius: 14px;
+}
+
+/* ===== CART PAGE ===== */
+.cart-page {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+/* ITEM CARD */
+.cart-item {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  background: #ffffff;
+  padding: 16px;
+  border-radius: 16px;
+  margin-bottom: 16px;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.06);
+}
+
+.cart-item img {
+  width: 90px;
+  height: 90px;
+  border-radius: 12px;
+  object-fit: cover;
+}
+
+.cart-item-info {
+  flex: 1;
+}
+
+.cart-item-info h4 {
+  font-size: 16px;
+  margin-bottom: 4px;
+}
+
+.cart-item-info p {
+  font-size: 14px;
+  color: #666;
+}
+
+/* QUANTITY */
+.qty-controls {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.qty-btn {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  border: none;
+  background: #f2f2f2;
+  font-size: 18px;
+  cursor: pointer;
+}
+
+.qty-btn:hover {
+  background: #e5e5e5;
+}
+
+/* REMOVE */
+.remove-btn {
+  font-size: 13px;
+  color: #ff4d4f;
+  cursor: pointer;
+  margin-top: 6px;
+}
+
+/* SUMMARY */
+.cart-summary {
+  background: #ffffff;
+  padding: 20px;
+  border-radius: 18px;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.08);
+}
+
+.summary-row {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+  font-size: 15px;
+}
+
+.summary-row.total {
+  font-size: 18px;
+  font-weight: 600;
+}
+
+/* COUPON */
+.coupon {
+  color: #16a34a;
+  font-size: 14px;
+}
+
+/* PLACE ORDER */
+.place-order-btn {
+  width: 100%;
+  margin-top: 16px;
+  padding: 14px;
+  border-radius: 14px;
+  border: none;
+  background: #0a84ff;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.place-order-btn:hover {
+  background: #006ee6;
+}
+
+/* SUCCESS */
+.order-success {
+  background: #ecfdf3;
+  color: #166534;
+  padding: 18px;
+  border-radius: 16px;
+  text-align: center;
+  font-weight: 500;
+  margin-top: 20px;
+}
+
+.cart-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #fff;
+  border-radius: 16px;
+  padding: 16px;
+  margin-bottom: 16px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+}
+
+.cart-left {
+  display: flex;
+  gap: 14px;
+  align-items: center;
+}
+
+.cart-left img {
+  width: 72px;
+  height: 72px;
+  border-radius: 12px;
+  object-fit: cover;
+}
+
+.cart-qty {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.qty-btn {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  border: none;
+  background: #f1f1f1;
+  font-size: 18px;
+  cursor: pointer;
+}
+
+.remove-btn {
+  background: none;
+  border: none;
+  color: #ff3b30;
+  cursor: pointer;
+  margin-top: 6px;
+}
+
+.cart-summary-card {
+  background: #fff;
+  border-radius: 18px;
+  padding: 20px;
+  margin-top: 30px;
+  box-shadow: 0 12px 30px rgba(0,0,0,0.08);
+}
+
+.cart-summary-card p {
+  display: flex;
+  justify-content: space-between;
+  margin: 8px 0;
+}
+
+.green {
+  color: #34c759;
+}
+
+.grand-total {
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.place-order-btn {
+  width: 100%;
+  margin-top: 16px;
+  padding: 14px;
+  border-radius: 14px;
+  border: none;
+  background: #007aff;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.order-success {
+  text-align: center;
+  padding: 40px;
+}
+
+.order-success .check {
+  font-size: 48px;
+  color: #34c759;
+}
+
+/* ===== iOS STYLE QUANTITY CONTROLS ===== */
+.qty-controls {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.qty-btn {
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  border: none;
+  background: #f2f2f7;
+  font-size: 18px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s ease, transform 0.15s ease;
+}
+
+.qty-btn:hover {
+  background: #e5e5ea;
+  transform: scale(1.08);
+}
+
+.qty-value {
+  min-width: 20px;
+  text-align: center;
+  font-weight: 500;
+}
+
+/* ===== CART ITEM HOVER (iOS POP) ===== */
+.cart-item {
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.cart-item:hover {
+  transform: translateY(-6px) scale(1.01);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
+}
+
+/* ===== PAYMENT SECTION ===== */
+.payment-methods {
+  margin-top: 20px;
+}
+
+.payment-title {
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+.payment-option {
+  padding: 12px 14px;
+  border-radius: 12px;
+  background: #f9f9fb;
+  margin-bottom: 8px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: transform 0.15s ease, background 0.2s ease;
+}
+
+.payment-option:hover {
+  background: #efeff4;
+  transform: translateY(-2px);
+}
+
+.payment-option.highlight {
+  background: #e8f0ff;
+  font-weight: 500;
+}
+
+/* ================================
+   iOS STYLE QUANTITY CONTROLS
+   (override – safe)
+================================ */
+
+.cart-qty {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.cart-qty button {
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  border: none;
+  background: #f2f2f7;              /* iOS light gray */
+  color: #111;
+  font-size: 18px;
+  font-weight: 600;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+}
+
+.cart-qty button:hover {
+  background: #e5e5ea;
+  transform: scale(1.05);
+}
+
+.cart-qty button:active {
+  transform: scale(0.95);
+}
+
+.cart-qty span {
+  min-width: 20px;
+  text-align: center;
+  font-size: 15px;
+  font-weight: 600;
+  color: #111;
+}
+
+/* ================================
+   iOS HAPTIC FEEL (TAP FEEDBACK)
+================================ */
+
+.cart-qty button {
+  position: relative;
+  overflow: hidden;
+}
+
+.cart-qty button::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.08);
+  opacity: 0;
+  transition: opacity 0.15s ease;
+}
+
+.cart-qty button:active::after {
+  opacity: 1;
+}
+
+.cart-qty button:active {
+  transform: scale(0.92);
+}
+
+.cart-qty button:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+  transform: none;
+}
+
+/* ===== FIXED QTY BUTTONS ===== */
+.cart-qty {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.qty-btn {
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  border: none;
+  background: #f2f2f7;
+  color: #000;
+  font-size: 20px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: transform 0.12s ease, background 0.12s ease;
+}
+
+.qty-btn:hover:not(:disabled) {
+  background: #e5e5ea;
+  transform: scale(1.08);
+}
+
+.qty-btn:active:not(:disabled) {
+  transform: scale(0.92);
+}
+
+.qty-btn:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+.qty-count {
+  min-width: 18px;
+  text-align: center;
+  font-weight: 500;
+}
+
+/* ===== RESTORED SUMMARY LOOK ===== */
+.cart-summary-card {
+  background: #fff;
+  border-radius: 18px;
+  padding: 22px;
+  box-shadow: 0 12px 30px rgba(0,0,0,0.08);
+}
+
+.summary-row {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 12px;
+  font-size: 15px;
+}
+
+.summary-row.discount span:last-child {
+  color: #22c55e;
+}
+
+.summary-row.total {
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.place-order-btn {
+  width: 100%;
+  margin-top: 18px;
+  padding: 14px;
+  border-radius: 14px;
+  border: none;
+  background: #0a84ff;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.place-order-btn:hover {
+  background: #006fe0;
+}
+
+/* ===== SUCCESS STATE ===== */
+.order-success {
+  text-align: center;
+  padding: 40px 20px;
+}
+
+.order-success .check {
+  width: 60px;
+  height: 60px;
+  margin: 0 auto 12px;
+  border-radius: 50%;
+  background: #22c55e;
+  color: white;
+  font-size: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* ===============================
+   iOS-style Quantity Buttons
+   =============================== */
+
+.cart-qty {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.qty-btn {
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  border: none;
+  background: #f2f2f7;
+  color: #000;
+  font-size: 18px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform 0.15s ease, background 0.15s ease;
+}
+
+.qty-btn:hover {
+  background: #e5e5ea;
+  transform: scale(1.08);
+}
+
+.qty-btn:active {
+  transform: scale(0.92);
+}
+
+.qty-btn:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.cart-qty span {
+  min-width: 20px;
+  text-align: center;
+  font-weight: 500;
+}
+
+/* ===============================
+   Cart item hover (iOS pop)
+   =============================== */
+
+.cart-item {
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.cart-item:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 14px 28px rgba(0,0,0,0.08);
+}
+

@@ -1,0 +1,39 @@
+.shop-layout {
+  display: grid;
+  grid-template-columns: 220px 1fr;
+  gap: 40px;
+  margin-top: 30px;
+}
+
+/* SIDEBAR */
+.category-sidebar {
+  position: sticky;
+  top: 90px;
+}
+
+.category-sidebar h4 {
+  margin-bottom: 14px;
+  font-size: 15px;
+}
+
+.category-sidebar ul {
+  list-style: none;
+  padding: 0;
+}
+
+.category-sidebar li {
+  padding: 10px 12px;
+  margin-bottom: 6px;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.category-sidebar li:hover {
+  background: rgba(0, 0, 0, 0.05);
+}
+
+.category-sidebar li.active {
+  background: #000;
+  color: #fff;
+}

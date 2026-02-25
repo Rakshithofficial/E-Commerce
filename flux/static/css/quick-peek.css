@@ -1,0 +1,113 @@
+/* ==============================
+   QUICK PEEK OVERLAY
+============================== */
+
+.qp-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.45);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+  z-index: 90;
+}
+
+.qp-overlay.active {
+  opacity: 1;
+  pointer-events: all;
+}
+
+/* ==============================
+   QUICK PEEK PANEL
+============================== */
+
+.quick-peek {
+  position: fixed;
+  top: 0;
+  right: -420px;
+  width: 420px;
+  height: 100vh;
+  background: #ffffff;
+  box-shadow: -20px 0 50px rgba(0,0,0,0.12);
+  z-index: 100;
+  transition: right 0.35s ease;
+  display: flex;
+  flex-direction: column;
+}
+
+.quick-peek.active {
+  right: 0;
+}
+
+/* Close button */
+.qp-close {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  background: none;
+  border: none;
+  font-size: 22px;
+  cursor: pointer;
+}
+
+/* ==============================
+   CONTENT
+============================== */
+
+.qp-content {
+  padding: 32px;
+  overflow-y: auto;
+}
+
+.qp-content img {
+  width: 100%;
+  border-radius: 14px;
+  margin-bottom: 16px;
+  object-fit: cover;
+}
+
+.qp-content h3 {
+  font-size: 20px;
+  margin-bottom: 8px;
+}
+
+.qp-price {
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 6px;
+}
+
+.qp-stock {
+  font-size: 14px;
+  margin-bottom: 20px;
+  color: #555;
+}
+
+/* ==============================
+   ACTIONS
+============================== */
+
+.qp-actions {
+  display: flex;
+  gap: 12px;
+}
+
+.qp-cart,
+.qp-buy {
+  flex: 1;
+  height: 44px;
+  border-radius: 12px;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  border: none;
+}
+
+.qp-cart {
+  background: #f2f2f2;
+}
+
+.qp-buy {
+  background: #007bff;
+  color: white;
+}

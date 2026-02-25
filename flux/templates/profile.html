@@ -1,0 +1,87 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>FLUX • Profile</title>
+
+  <script>
+    (function () {
+      const theme = localStorage.getItem("flux_theme");
+      if (theme === "dark") {
+        document.documentElement.classList.add("dark");
+      }
+    })();
+  </script>
+
+  <link rel="stylesheet" href="{% static 'css/style.css' %}" />
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <header class="navbar">
+    <div class="nav-left">
+      <a href="{% url 'home' %}" class="logo">FLUX</a>
+    </div>
+
+    <div class="nav-right">
+      <a href="{% url 'cart' %}" class="cart-icon" title="Cart">🛒</a>
+
+      <div class="profile-wrapper">
+        <div class="nav-profile" id="profileBtn">
+          <img id="navAvatar" src="" alt="Profile" />
+          <span id="navName"></span>
+          <span class="nav-arrow">▾</span>
+        </div>
+
+        <div class="profile-menu" id="profileMenu">
+          <a href="{% url 'profile' %}">My Profile</a>
+          <a href="{% url 'orders' %}">My Orders</a>
+          <a href="{% url 'settings' %}">Settings</a>
+          <button class="switch-account-btn">Switch account</button>
+          <button id="logoutBtn" class="logout-btn">Logout</button>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- PROFILE -->
+  <main class="container profile-page">
+
+    <!-- Avatar -->
+    <div class="profile-header">
+      <label class="avatar-wrapper">
+        <img id="avatarImg" src="" alt="Avatar" />
+        <input type="file" id="avatarInput" accept="image/*" hidden />
+      </label>
+
+      <h2 id="profileName">User</h2>
+      <p id="profileEmail">email@example.com</p>
+    </div>
+
+    <!-- INFO CARD -->
+    <div class="ios-card">
+      <div class="ios-row">
+        <span>Login Method</span>
+        <span id="loginMethod">—</span>
+      </div>
+
+      <div class="ios-row">
+        <span>Display Name</span>
+        <input type="text" id="displayName" />
+      </div>
+    </div>
+
+    <button class="primary-btn" id="saveProfile">Save Changes</button>
+    <p class="success-msg" id="savedMsg">Saved ✓</p>
+
+  </main>
+
+  <!-- SCRIPTS -->
+  <script src="{% static 'js/profile.js' %}"></script>
+  <script src="{% static 'js/navbar.js' %}"></script>
+  <script src="{% static 'js/theme.js' %}"></script>
+
+</body>
+</html>

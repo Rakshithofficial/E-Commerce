@@ -1,0 +1,98 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>FLUX • Settings</title>
+
+  <script>
+    (function () {
+      const theme = localStorage.getItem("flux_theme");
+      if (theme === "dark") {
+        document.documentElement.classList.add("dark");
+      }
+    })();
+  </script>
+
+  <link rel="stylesheet" href="{% static 'css/style.css' %}" />
+</head>
+
+<body>
+
+<header class="navbar">
+  <div class="nav-left">
+    <a href="{% url 'home' %}" class="logo">FLUX</a>
+  </div>
+</header>
+
+<main class="container settings-page">
+
+  <h2 class="section-title">Settings</h2>
+
+  <!-- ACCOUNT -->
+  <div class="settings-group">
+    <p class="settings-title">Account</p>
+
+    <a href="{% url 'profile' %}" class="settings-item">
+      <span>Profile</span>
+      <span class="arrow">›</span>
+    </a>
+
+    <div class="settings-item">
+      <span>Login Method</span>
+      <span class="settings-value" id="authType">—</span>
+    </div>
+  </div>
+
+  <!-- APPEARANCE -->
+  <div class="settings-group">
+    <p class="settings-title">Appearance</p>
+
+    <div class="settings-item appearance-toggle">
+      <div class="appearance-text">
+        <span class="appearance-title">Appearance</span>
+        <span class="appearance-sub" id="appearanceLabel">Light</span>
+      </div>
+
+      <label class="switch">
+        <input type="checkbox" id="themeToggle">
+        <span class="slider"></span>
+      </label>
+    </div>
+  </div>
+
+  <!-- APP -->
+  <div class="settings-group">
+    <p class="settings-title">App</p>
+
+    <div class="settings-item">
+      <span>About FLUX</span>
+      <span class="settings-value">Amazon 2.0 (Demo)</span>
+    </div>
+
+    <div class="settings-item">
+      <span>Version</span>
+      <span class="settings-value">v1.0.0</span>
+    </div>
+  </div>
+
+</main>
+
+<script src="{% static 'js/theme.js' %}"></script>
+<script src="{% static 'js/auth.js' %}"></script>
+
+<script>
+  const user = JSON.parse(localStorage.getItem("flux_user"));
+  if (user) {
+    document.getElementById("authType").textContent =
+      user.authType === "google"
+        ? "Google"
+        : user.authType === "apple"
+        ? "Apple ID"
+        : "Email";
+  }
+</script>
+
+</body>
+</html>

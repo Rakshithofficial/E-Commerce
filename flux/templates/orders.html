@@ -1,0 +1,28 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>FLUX • Orders</title>
+
+  <link rel="stylesheet" href="{% static 'css/style.css' %}" />
+  <link rel="stylesheet" href="{% static 'css/orders.css' %}" />
+</head>
+
+<body>
+
+<header class="navbar">
+  <div class="nav-left">
+    <a href="{% url 'home' %}" class="logo">FLUX</a>
+  </div>
+</header>
+
+<main class="container orders-page">
+  <h2 class="section-title">My Orders</h2>
+
+  <div id="ordersList"></div>
+</main>
+
+<script src="{% static 'js/orders.js' %}"></script>
+</body>
+</html>

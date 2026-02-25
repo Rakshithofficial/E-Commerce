@@ -1,0 +1,61 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>FLUX • Create Account</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="stylesheet" href="{% static 'css/style.css' %}">
+  <link rel="stylesheet" href="{% static 'css/signup.css' %}">
+</head>
+
+<body class="auth-page">
+
+  <div class="flux-auth-wrapper">
+
+    <!-- LEFT SIDE : BRAND -->
+    <div class="flux-auth-left">
+      <h1>FLUX</h1>
+      <p>
+        Shop smarter.<br>
+        Discover better.<br>
+        Experience <strong>FLUX</strong>.
+      </p>
+    </div>
+
+    <!-- RIGHT SIDE : FORM -->
+    <div class="flux-auth-right">
+
+      <h2>Create your account</h2>
+      <p class="subtitle">Join FLUX and start shopping smarter</p>
+
+      <form method="post" action="{% url 'signup' %}">
+        {% csrf_token %}
+
+        <div class="flux-grid">
+          {{ form.full_name }}
+          {{ form.username }}
+
+          {{ form.email }}
+          {{ form.phone }}
+        </div>
+
+        {{ form.password1 }}
+        {{ form.password2 }}
+
+        <button type="submit" class="flux-btn">
+          Create Account
+        </button>
+
+        <p class="auth-switch">
+          Already have an account?
+          <a href="{% url 'login' %}">Sign in</a>
+        </p>
+      </form>
+
+    </div>
+  </div>
+
+</body>
+</html>
